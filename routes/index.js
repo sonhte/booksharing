@@ -20,8 +20,9 @@ con.connect(function(err){
 router.get('/', function(req, res, next) {
   con.query('SELECT * FROM USERS WHERE userID=1', function(err, rows, fields){
     con.end();
+    console.log(rows[0]);
     if (!err)
-      res.render('index', {title:"Hello World", name:rows});
+      res.render('index', {title:"Hello World", name:rows[0].username});
     else
       res.render('index', {title:"Hello World", name:"error"});
   });

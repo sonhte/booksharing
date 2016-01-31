@@ -24,6 +24,7 @@ router.get('/', function(req, res, next) {
       res.render('index', {title:"Hello World", name:rows});
     else
       res.render('index', {title:"Hello World", name:"error"});
+  });
 });
 
 module.exports = router;
